@@ -29,7 +29,11 @@ gem 'jbuilder', '~> 1.2'
 
 # APP-RELATED GEMS
 
-# aws ruby
+# password gem
+
+gem 'bcrypt-ruby', '3.1.2'
+
+# aws ruby sdk gem
 gem 'aws-sdk-v1'
 
 # AWS-SDK gem
