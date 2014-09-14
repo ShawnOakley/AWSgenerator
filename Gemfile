@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 # APP-RELATED GEMS
 
+# aws ruby
 gem 'aws-sdk-v1'
 
 # AWS-SDK gem

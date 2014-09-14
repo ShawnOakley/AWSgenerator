@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-AWSgenerator::Application.config.secret_key_base = '0215763b3e626edd6876c475a5a9497695b315ddf1f80e2f4678b61e9d2c852b1a19225d76c28abe1290cf69e422837d462c2ac805af8596ca5d5e5ebd7a14c5'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+SampleApp::Application.config.secret_key_base = secure_token
