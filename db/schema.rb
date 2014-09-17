@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914052049) do
+ActiveRecord::Schema.define(version: 20140914061139) do
+
+  create_table "aws_entities", force: true do |t|
+    t.string   "entity_type"
+    t.string   "aws_id"
+    t.string   "name"
+    t.string   "options_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
